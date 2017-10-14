@@ -23,4 +23,4 @@ export default class votingComponent extends React.component {
 }
 VotingComponent.propTypes = {
     vote: React.PropTypes.object.isRequired
-};
+};  
