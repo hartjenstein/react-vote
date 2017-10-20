@@ -1,5 +1,5 @@
 import React from 'react';
-import ChoiceBar from './ChoiceBar.js;
+import ChoiceBar from './ChoiceBar';
 
 export default class votingComponent extends React.component {
     render() {
