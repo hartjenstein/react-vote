@@ -62,9 +62,27 @@ export default class VoteComposer extends React.Component {
                             name="Choice_!"
                             placeholder="Choice #1"
                     />
-                    <div> className="ButtonBar</div>
+                    <div className="ButtonBar">
+                        <a className="Button" onClick={this.save}>Save</a>
+                        <a className="Button" onClick={this.close}>Cancel</a>
+                    </div>    
                 </div>
             </div>
         )
     }
+    render() {
+        const { active } = this.props;
+    
+        if ( !active ) {
+            return this.renderInactiveForm();
+        }
+        return this.renderActiveForm();
+    }
+
 }
+VoteComposer.PropTypes = {
+    active: React.PropTypes.bool,
+    onSave: React.PropType.func.isRequired,
+    onActivate: React.PropType.func.isRequired,
+    onDeactivate: React.PropType.func.isRequired
+};
