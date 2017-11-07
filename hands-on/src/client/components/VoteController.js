@@ -16,7 +16,10 @@ export default class VoteController extends React.Component {
 
 
     setCurrentVote(vote) {
-        this.setState({currentVoteId: vote ? vote.id : null});
+        const { composerActive } = this.state;
+        this.setState(
+            { currentVoteId: vote && !composerActive ? vote.id : null }
+        );
     }
 
     registerChoice(vote, choice) {

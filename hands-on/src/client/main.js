@@ -16,10 +16,11 @@ const vote = {
         {id: 'choice_3', title: 'Not sure yet', count: 1}
 ]};
 
+const mainComponent = <VotingComponent vote={vote}/>
 // Render App
 ReactDOM.render(
     <Layout>
-        <VotingComponent vote={vote}/>
+        {mainComponent}
     </Layout>,
     document.getElementById('voteAppMountPoint')
 );
